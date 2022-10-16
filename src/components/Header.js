@@ -18,6 +18,7 @@ const Header = () => {
             <div className="navbar bg-primary text-primary-content">
                 <div className='flex-1'>
                     <Link className="btn btn-ghost normal-case text-xl" to='/home'>Home</Link>
+                    <Link className="btn btn-ghost normal-case text-xl" to='/orders'>Orders</Link>
                     <Link className="btn btn-ghost normal-case text-xl" to='/login'>Log In</Link>
                     <Link className="btn btn-ghost normal-case text-xl" to='/register'>Register</Link>
                 </div>
