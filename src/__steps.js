@@ -31,6 +31,13 @@ const createUser = (email, password) => {
 const signIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
+useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, presentUser => {
+            setUser(presentUser);
+            console.log(presentUser);
+        })
+        return () => unsubscribe();
+    })
 const authInfo = { user, createUser, signIn }
 4.
 */

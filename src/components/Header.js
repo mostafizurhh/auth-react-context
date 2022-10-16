@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/UserContext';
 
 const Header = () => {
     const { user } = useContext(AuthContext)
-    console.log(user.displayName)
+    // console.log(user.displayName)
     return (
         <div>
             <div className="navbar bg-primary text-primary-content">
@@ -14,7 +14,10 @@ const Header = () => {
                     <Link className="btn btn-ghost normal-case text-xl" to='/register'>Register</Link>
                 </div>
                 <div className='flex-none gap-2'>
-                    {user?.displayName && <span>Welcome {user.displayName}</span>}
+                    {user?.email && <span>Welcome {user.email}</span>}
+                </div>
+                <div className='pl-2'>
+                    <button className="btn btn-xs btn-success">Sign out</button>
                 </div>
             </div>
         </div>
