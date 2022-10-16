@@ -24,8 +24,17 @@ const Header = () => {
                 <div className='flex-none gap-2'>
                     {user?.email && <span>Welcome {user.email}</span>}
                 </div>
+
+                {/*************************************
+                    signin and signout button toggling 
+                 **************************************/}
+
                 <div className='pl-2'>
-                    <button onClick={handleLogOut} className="btn btn-xs btn-success">Sign out</button>
+                    {user?.email ?
+                        <button onClick={handleLogOut} className="btn btn-xs btn-success">Sign out</button>
+                        :
+                        <Link to='/login'><button className="btn btn-xs btn-success">Sign In</button></Link>
+                    }
                 </div>
             </div>
         </div>

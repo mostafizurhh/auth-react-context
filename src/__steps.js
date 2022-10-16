@@ -39,5 +39,17 @@ useEffect(() => {
         return () => unsubscribe();
     })
 const authInfo = { user, createUser, signIn }
-4.
+*/
+
+/*************************************
+signin and signout button toggling 
+**************************************
+
+<div className='pl-2'>
+{user?.email ?
+<button onClick={handleLogOut} className="btn btn-xs btn-success">Sign out</button>
+:
+<Link to='/login'><button className="btn btn-xs btn-success">Sign In</button></Link>
+}
+</div>
 */

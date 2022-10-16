@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
 
 const Register = () => {
-    /* create new user with context API*/
+    /*************************************************************** 
+    create new user with email and password with help of context API
+    ****************************************************************/
     const { createUser, signInWithGoogle } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
@@ -27,6 +29,9 @@ const Register = () => {
             })
     }
 
+    /*************************************************** 
+    create new user with Google and help of context API
+    ****************************************************/
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
@@ -70,6 +75,9 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
+
+                        {/* google Signin */}
+
                         <button onClick={handleGoogleSignIn} className="btn btn-info">Google</button>
                     </div>
                 </div>
