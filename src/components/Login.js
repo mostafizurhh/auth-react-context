@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
 
 const Login = () => {
     /* get signIn function's info with the help of context API */
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();/* go to home page after login */
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -20,6 +21,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                navigate('/home');/* go to home page after login */
             })
             .catch(error => console.error(error))
     }
