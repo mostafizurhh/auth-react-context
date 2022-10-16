@@ -6,6 +6,7 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     // console.log(user.displayName)
 
+    /* handle sign out button */
     const handleLogOut = () => {
         logOut()
             .then(() => { })
