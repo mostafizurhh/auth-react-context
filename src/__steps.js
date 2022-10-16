@@ -24,5 +24,13 @@ Auth Integration
 ----------------------
 1. create auth in UserContext component
 2. set state for user
-3.
+3. then write following >>
+const createUser = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
+const signIn = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+const authInfo = { user, createUser, signIn }
+4.
 */
