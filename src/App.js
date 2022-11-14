@@ -1,41 +1,14 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import Main from './layout/Main';
-import Home from './components/Home'
-import Login from './components/Login'
-import Register from './components/Register'
-import Orders from './components/Orders';
-import PrivateRoutes from './routes/PrivateRoutes';
+import { router } from './router/Routes/Routes';
+
+
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Main></Main>,
-      children: [
-        {
-          path: '/home',
-          element: <PrivateRoutes><Home></Home></PrivateRoutes>
-        },
-        {
-          path: '/orders',
-          element: <PrivateRoutes><Orders></Orders></PrivateRoutes>
-        },
-        {
-          path: '/login',
-          element: <Login></Login>
-        },
-        {
-          path: '/register',
-          element: <Register></Register>
-        }
-      ]
-
-    }
-  ])
   return (
-    <div className="App">
-      <RouterProvider router={router}></RouterProvider>
+    <div className='mx-auto max-w-[1440px]'>
+      <RouterProvider router={router}>
+      </RouterProvider>
     </div>
   );
 }
